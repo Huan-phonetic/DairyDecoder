@@ -152,7 +152,7 @@ class SettingsDialog(tk.Toplevel):
             var = tk.StringVar(value=cfg.get(key, default))
             ttk.Entry(f, textvariable=var, width=56).pack(side=tk.LEFT, fill=tk.X, expand=True)
             def browse(v=var):
-                d = filedialog.askdirectory(title=label)
+                d = filedialog.askdirectory(title=label, parent=self)
                 if d:
                     v.set(d)
             ttk.Button(f, text="浏览…", command=browse, width=6).pack(side=tk.LEFT, padx=(4, 0))
