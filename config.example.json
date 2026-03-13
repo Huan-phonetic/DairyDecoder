@@ -1,0 +1,7 @@
+{
+  "assets_dir":   "\\\\YOUR_NAS\\siyuan\\data\\assets",
+  "siyuan_url":   "http://YOUR_SIYUAN_HOST:6806",
+  "siyuan_token": "YOUR_SIYUAN_TOKEN",
+  "api_key":      "YOUR_OPENROUTER_API_KEY",
+  "model":        "anthropic/claude-3.5-sonnet"
+}
