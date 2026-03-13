@@ -294,17 +294,12 @@ class App(tk.Tk):
             save_config(self.cfg)
             self._status.set("设置已保存。")
 
-    def _check_config(self) -> bool:
-        """若关键配置缺失则弹出设置对话框，返回是否已配置。"""
-        if not self.cfg.get("assets_dir"):
-            messagebox.showinfo("首次使用", "请先配置图片目录和思源笔记连接信息。")
-            self._open_settings()
-        return bool(self.cfg.get("assets_dir"))
-
     # ── 启动 ──────────────────────────────────────────────────────────────────
 
     def _startup(self):
-        if not self._check_config():
+        self._open_settings()
+        if not self.cfg.get("assets_dir"):
+            self.destroy()
             return
         assets_dir = self.cfg["assets_dir"]
         images = get_pending_images(assets_dir)
